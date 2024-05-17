@@ -18,7 +18,6 @@ public class TodoController {
 
     @GetMapping("/todos")
     public List<Todo> getAllTodos() {
-        log.debug("TodoController getAllTodos");
         return todoService.getAllTodos();
     }
 
