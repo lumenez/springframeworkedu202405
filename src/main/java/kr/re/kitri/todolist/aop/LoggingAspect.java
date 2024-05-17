@@ -17,3 +17,4 @@ public class LoggingAspect {
         log.debug("{} LogginAspect.logging", joinPoint);
     }
 }
+
