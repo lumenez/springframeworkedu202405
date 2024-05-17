@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.re.kitri.todolist.repository.TodoRepository">
+    <select id="selectAllTodos" resultType="kr.re.kitri.todolist.model.Todo">
+        <![CDATA[
+            SELECT todoId, CONTENT, COMPLETED FROM TODO_JM order by todoId;
+        ]]>
+    </select>
+
+    <insert id="insertTodo" parameterType="kr.re.kitri.todolist.model.Todo">
+        <![CDATA[
+            insert into todo_jm
+            values (
+            #{todoId},
+            #{content},
+            #{completed}
+            )
+        ]]>
+    </insert>
+
+    <select id="selectTodo" resultType="kr.re.kitri.todolist.model.Todo">
+        <![CDATA[
+            select todoId, CONTENT, COMPLETED FROM TODO_JM where todoId = #{todoId};
+        ]]>
+    </select>
+</mapper>
